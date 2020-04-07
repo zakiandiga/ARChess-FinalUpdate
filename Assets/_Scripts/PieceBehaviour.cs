@@ -8,7 +8,7 @@ public class PieceBehaviour : MonoBehaviour
     NavMeshAgent agent;
     Animator anim;
     public Transform enemy;
-    const int MAX_HEALTH = 100;
+    const int MAX_HEALTH = 3;
     int health = MAX_HEALTH;
     // Start is called before the first frame update
     void Start()
