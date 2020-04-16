@@ -5,12 +5,18 @@ using UnityEngine.AI;
 
 public class PieceBehaviour : MonoBehaviour
 {
+    public AudioClip walksound;
     NavMeshAgent agent;
     Animator anim;
     public Transform enemy;
     const int MAX_HEALTH = 3;
     int health = MAX_HEALTH;
     // Start is called before the first frame update
+    public void playWalkSound()
+    {
+        GetComponent<AudioSource>().PlayOneShot(walkSound);
+    }
+
     void Start()
     {
         agent = GetComponent<NavMeshAgent>(); // get reference to NavMeshAgent
@@ -52,6 +58,12 @@ public class PieceBehaviour : MonoBehaviour
         {
             anim.SetTrigger("attack"); // trigger attack
             enemy.GetComponent<PieceBehaviour>().underAttack(); // substract health from the enemy's health.
+        }
+
+        //new line, to do atk animation when under attack
+        if (health < MAX_HEALTH)
+        {
+            anim.SetTrigger("attack");
         }
     }
 }

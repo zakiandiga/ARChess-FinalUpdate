@@ -8,6 +8,7 @@ using UnityEngine.AI;
 public class GameState : MonoBehaviour
 {
     string playerColor = "White";
+    public MenuInteraction menuInteraction;
     public static bool playersTurn = true; // player, not AI, gets the first move, regardless of color
     public static bool aiTurn = false; // 
     public static Transform[,] chessboard = new Transform[8,8]; // game state two-dimensiona array
@@ -210,6 +211,18 @@ public class GameState : MonoBehaviour
     // at the beginning of the game, we procedurally construct the chessboard
     void Start()
     {
+        /*menuInteraction = GameObject.Find("StartManager").GetComponent<MenuInteraction>();
+        if (menuInteraction.colorChoose == 1)
+        {
+            playerColor = "White";
+
+        }
+
+        if (menuInteraction.colorChoose == 2)
+        {
+            playerColor = "Black";
+        }
+        */
         for (int i = 0; i < 8; ++i) // in every column
         {
             for (int j = 0; j < 8; ++j) // and every row of the chessboard

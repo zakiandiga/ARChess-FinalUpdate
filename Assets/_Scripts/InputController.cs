@@ -7,8 +7,25 @@ using UnityEngine;
 public class InputController : MonoBehaviour
 {
     string playerColor = "White";
+    public MenuInteraction menuInteraction;
     Transform selectedPiece; // reference to the selected piece, initially empty
     Transform selectedSquare; // reference to the selected square, initially empty;
+
+    void start()
+    {
+        /*menuInteraction = GameObject.Find("StartManager").GetComponent<MenuInteraction>();
+        if (menuInteraction.colorChoose == 1)
+        {
+            playerColor = "White";
+
+        }
+
+        if (menuInteraction.colorChoose == 2)
+        {
+            playerColor = "Black";
+        } */
+    }
+    
 
     void selectSquare(Transform square)
     {

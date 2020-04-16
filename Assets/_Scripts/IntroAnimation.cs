@@ -7,25 +7,26 @@ public class IntroAnimation : MonoBehaviour
     public Animator cameraAnimator;
     public KeyCode StarterW;
     public KeyCode StarterB;
+    public MenuInteraction menuInteraction;
     const string WhitesPlay = "WhitesPlay";
     const string BlacksPlay = "BlacksPlay";
     
     // Start is called before the first frame update
     void Start()
     {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(StarterW))
+        menuInteraction = GameObject.Find("StartManager").GetComponent<MenuInteraction>();
+        if (menuInteraction.colorChoose == 1)
         {
             cameraAnimator.SetTrigger(WhitesPlay);
+
         }
-        if (Input.GetKeyDown(StarterB))
+
+        if (menuInteraction.colorChoose == 2)
         {
             cameraAnimator.SetTrigger(BlacksPlay);
         }
     }
+    
+
+
 }
