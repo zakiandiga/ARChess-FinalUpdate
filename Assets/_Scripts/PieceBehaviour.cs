@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class PieceBehaviour : MonoBehaviour
 {
-    public AudioClip walksound;
+    //public AudioClip walksound;
     NavMeshAgent agent;
     Animator anim;
     public Transform enemy;
@@ -14,7 +14,7 @@ public class PieceBehaviour : MonoBehaviour
     // Start is called before the first frame update
     public void playWalkSound()
     {
-        GetComponent<AudioSource>().PlayOneShot(walkSound);
+        //GetComponent<AudioSource>().PlayOneShot(walkSound);
     }
 
     void Start()
